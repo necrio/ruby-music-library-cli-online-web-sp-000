@@ -109,16 +109,22 @@ def name_extractor(filename)
   file_bits = file_bits.split(" - ")
 end
 
-def play_song
-  puts "Which song number would you like to play?"
-  song_names = self.library
-  user_input = gets.strip.to_i
-  if user_input > 0 && user_input <= self.library.size
-    chosen_input = song_names[user_input - 1]
-    chosen_input = name_extractor(chosen_input)[1]
-    song = Song.find_by_name(chosen_input)
-    puts "Playing #{song.name} by #{song.artist.name}" unless song == nil
-  end
+# def play_song
+#   puts "Which song number would you like to play?"
+#   song_names = self.library
+#   user_input = gets.strip.to_i
+#   if user_input > 0 && user_input <= self.library.size
+#     chosen_input = song_names[user_input - 1]
+#     chosen_input = name_extractor(chosen_input)[1]
+#     song = Song.find_by_name(chosen_input)
+#     puts "Playing #{song.name} by #{song.artist.name}" unless song == nil
+#   end
+# end
+
+def play_song	
+  puts "What song number would you like to play?"	
+  song_input = gets.strip	
+  puts "Playing #{Song.all[song_input.to_i-1]}"	
 end
 
 
