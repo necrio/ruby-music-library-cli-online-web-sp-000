@@ -98,7 +98,7 @@ end
 
 def play_song
   puts "Which song number would you like to play?"
-  song_names = self.song_array
+  song_names = self.library
   user_input = gets.strip.to_i
   if user_input > 0 && user_input <= self.library.size
     chosen_input = song_names[user_input - 1]
