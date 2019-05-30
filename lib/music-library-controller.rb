@@ -96,6 +96,12 @@ def list_genres
     genre_songs.each {|song|puts "#{genre_songs.index(song) + 1}. #{song.artist.name} - #{song.name}"} unless genre_songs == nil
 end
 
+def name_extractor(filename)
+  #Returns an array, first value is artist, second is song, third is genre
+  file_bits = filename.gsub(/(\.mp3)/,'')
+  file_bits = file_bits.split(" - ")
+end
+
 def play_song
   puts "Which song number would you like to play?"
   song_names = self.library
