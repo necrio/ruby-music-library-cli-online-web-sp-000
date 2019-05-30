@@ -58,6 +58,13 @@ def list_songs
   end
 end
 
+def song_array
+    sorted_library = self.library.sort_by {|song|song.name}
+    sorted_library.collect do |song|
+      "#{sorted_library.index(song) + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
+    end
+  end
+
 def list_artists
   sorted_library = self.library(Artist).sort_by {|object|object.name}
   artists = sorted_library.collect {|object|"#{object.name}"}.uniq
