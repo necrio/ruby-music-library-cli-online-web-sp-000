@@ -203,7 +203,7 @@ class MusicLibraryController
    def play_song
     puts "Which song number would you like to play?"
     song_names = self.song_array
-    user_input = gets.chomp.to_i
+    user_input = gets.strip.to_i
     if user_input > 0 && user_input <= self.library.size
       chosen_input = song_names[user_input - 1]
       chosen_input = name_extractor(chosen_input)[1]
