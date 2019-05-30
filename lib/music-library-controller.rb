@@ -70,6 +70,19 @@ def list_genres
     genres.each {|genre| puts "#{genres.index(genre) + 1}. #{genre}"}
   end
 
+  def list_songs_by_artist
+   puts "Please enter the name of an artist:"
+   user_input = gets.chomp
+   artist_songs =[]
+   self.library.each do |song|
+       if song.artist.name == user_input
+         artist_songs << song
+       end
+   end
+   artist_songs = artist_songs.sort_by{|song|song.name}
+   artist_songs.each {|song|puts "#{artist_songs.index(song) + 1}. #{song.name} - #{song.genre.name}"} unless artist_songs == nil
+ end
+
 
 
 
