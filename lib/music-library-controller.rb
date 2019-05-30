@@ -106,7 +106,7 @@ end
 def name_extractor(filename)
   #Returns an array, first value is artist, second is song, third is genre
   split_file  = filename.gsub(".mp3", "")
-  split_file  = file_bits.split(" - ")
+  split_file  = split_file.split(" - ")
 end
 
 def play_song
