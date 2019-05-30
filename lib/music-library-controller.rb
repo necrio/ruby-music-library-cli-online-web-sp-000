@@ -136,8 +136,8 @@ class MusicLibraryController
     Song.all << newImporter.import
   end
 
-   def library(klass = Song)
-    sorted_library = klass.all.collect{|object|object if object.class == klass }
+   def library(lib = Song)
+    sorted_library = lib.all.collect{|object|object if object.class == lib }
     sorted_library = sorted_library.delete_if {|object|object==nil}
     sorted_library.uniq
   end
