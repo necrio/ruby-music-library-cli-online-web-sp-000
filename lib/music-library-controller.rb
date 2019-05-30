@@ -57,7 +57,7 @@ def list_artists
       artist.name
     end
     songs_sorted_by_artist.each.with_index(1) do |artist,index|
-      puts "#{artist.index + 1}. #{artist}"
+      puts "#{index}. #{artist.name}"
     end
   end
 
