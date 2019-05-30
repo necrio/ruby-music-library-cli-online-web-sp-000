@@ -4,6 +4,13 @@ def initialize(path = "./db/mp3s")
   MusicImporter.new(path).import
 end
 
+def library(classes = Song)
+    sorted_library = classes.all.collect{|object|object if object.class == classes }
+    sorted_library = sorted_library.delete_if {|object|object==nil}
+    sorted_library.uniq
+  end
+
+
 def call
   input = ""
   while input != "exit"
