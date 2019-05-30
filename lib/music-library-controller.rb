@@ -1,16 +1,16 @@
 # class MusicLibraryController
-# 
+#
 # def initialize(path = "./db/mp3s")
 #   MusicImporter.new(path).import
 # end
-# 
+#
 # def library(lib = Song)
 #     sorted_library = lib.all.collect{|object|object if object.class == lib }
 #     sorted_library = sorted_library.delete_if {|object|object==nil}
 #     sorted_library.uniq
 #   end
-# 
-# 
+#
+#
 # def call
 #   input = ""
 #   while input != "exit"
@@ -24,7 +24,7 @@
 #     puts "To quit, type 'exit'."
 #     puts "What would you like to do?"
 #     input = gets.strip
-# 
+#
 #     case input
 #     when "list songs"
 #       list_songs
@@ -39,10 +39,10 @@
 #     when "play song"
 #       play_song
 #     end
-# 
+#
 #   end
 # end
-# 
+#
 # def list_songs
 # =begin
 #   Song.all.sort{ |a, b| a.name <=> b.name }.each.with_index(1) do |s, i|
@@ -57,26 +57,26 @@
 #     puts "#{index}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
 #   end
 # end
-# 
+#
 # # def song_array
 # #     sorted_library = self.library.sort_by {|song|song.name}
 # #     sorted_library.collect do |song|
 # #       "#{sorted_library.index(song) + 1}. #{song.artist.name} - #{song.name} - #{song.genre.name}"
 # #     end
 # #   end
-# 
+#
 # def list_artists
 #   sorted_library = self.library(Artist).sort_by {|object|object.name}
 #   artists = sorted_library.collect {|object|"#{object.name}"}.uniq
 #   artists.each {|artist| puts "#{artists.index(artist) + 1}. #{artist}"}
 # end
-# 
+#
 # def list_genres
 #     sorted_library = self.library.sort_by {|song|song.genre.name}
 #     genres = sorted_library.collect {|song|"#{song.genre.name}"}.uniq
 #     genres.each {|genre| puts "#{genres.index(genre) + 1}. #{genre}"}
 #   end
-# 
+#
 #   def list_songs_by_artist
 #    puts "Please enter the name of an artist:"
 #    user_input = gets.strip
@@ -89,7 +89,7 @@
 #    artist_songs = artist_songs.sort_by{|song|song.name}
 #    artist_songs.each {|song|puts "#{artist_songs.index(song) + 1}. #{song.name} - #{song.genre.name}"} unless artist_songs == nil
 #  end
-# 
+#
 #  def list_songs_by_genre
 #   puts "Please enter the name of a genre:"
 #   user_input = gets.strip
@@ -102,13 +102,13 @@
 #     genre_songs = genre_songs.sort_by{|song|song.name}
 #     genre_songs.each {|song|puts "#{genre_songs.index(song) + 1}. #{song.artist.name} - #{song.name}"} unless genre_songs == nil
 # end
-# 
+#
 # def name_extractor(filename)
 #   #Returns an array, first value is artist, second is song, third is genre
 #   split_file  = filename.gsub(".mp3", "")
 #   split_file  = split_file.split(" - ")
 # end
-# 
+#
 # def play_song
 #   puts "Which song number would you like to play?"
 #   song_names = self.library
@@ -120,13 +120,13 @@
 #     puts "Playing #{song.name} by #{song.artist.name}" unless song == nil
 #   end
 # end
-# 
-# 
-# 
-# 
-# 
-# 
-# 
+#
+#
+#
+#
+#
+#
+#
 # end
 
 class MusicLibraryController
