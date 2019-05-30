@@ -80,8 +80,7 @@ def list_genres
        end
    end
    artist_songs = artist_songs.sort_by{|song|song.name}
-   artist_songs.each {|song|puts "#{artist_songs.index(song) + 1}. #{song.name} - #{song.genre.name}"}
-      unless artist_songs == nil
+   artist_songs.each {|song|puts "#{artist_songs.index(song) + 1}. #{song.name} - #{song.genre.name}"} unless artist_songs == nil
  end
 
 
