@@ -85,7 +85,7 @@ def list_genres
 
  def list_songs_by_genre
   puts "Please enter the name of a genre:"
-  user_input = gets.chomp
+  user_input = gets.strip
   genre_songs = []
   self.library.each do |song|
     if song.genre.name == user_input
