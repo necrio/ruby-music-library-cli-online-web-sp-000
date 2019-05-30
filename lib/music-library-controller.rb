@@ -170,7 +170,7 @@ class MusicLibraryController
 
    def list_songs_by_artist
     puts "Please enter the name of an artist:"
-    user_input = gets.chomp
+    user_input = gets.strip
     artist_songs =[]
     self.library.each do |song|
         if song.artist.name == user_input
